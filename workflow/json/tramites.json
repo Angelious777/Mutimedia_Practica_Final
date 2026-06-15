@@ -1,0 +1,18 @@
+[
+    {
+        "nrotramite": "TR0001",
+        "usuario": "angel",
+        "gestion": "2026",
+        "semestre": "1",
+        "observaciones": "Primer ADE",
+        "habilitado": "SI",
+        "obs_habilitacion": "Habilitado ADE",
+        "pago": "SI",
+        "obs_pago": "Matricula pagada ADE",
+        "materias": [
+            "INF-111 Programación I",
+            "INF-113 Base de Datos"
+        ],
+        "cupo": "SI"
+    }
+]

@@ -1,0 +1,191 @@
+[
+    {
+        "id": "1",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P1",
+        "usuario": "angel",
+        "fechaini": "2026-06-14",
+        "fechafin": "2026-06-15 08:33:31"
+    },
+    {
+        "id": "2",
+        "nrotramite": "TR0002",
+        "flujo": "F1",
+        "proceso": "P4",
+        "usuario": "agutierrez",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "3",
+        "nrotramite": "TR0003",
+        "flujo": "F1",
+        "proceso": "P5",
+        "usuario": "crojas",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "4",
+        "nrotramite": "TR0004",
+        "flujo": "F1",
+        "proceso": "P6",
+        "usuario": "mflores",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "5",
+        "nrotramite": "TR0005",
+        "flujo": "F1",
+        "proceso": "P7",
+        "usuario": "crojas",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "6",
+        "nrotramite": "TR0006",
+        "flujo": "F1",
+        "proceso": "P8",
+        "usuario": "sistema",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "7",
+        "nrotramite": "TR0007",
+        "flujo": "F2",
+        "proceso": "P1",
+        "usuario": "angel",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "8",
+        "nrotramite": "TR0008",
+        "flujo": "F2",
+        "proceso": "P2",
+        "usuario": "mflores",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "9",
+        "nrotramite": "TR0009",
+        "flujo": "F2",
+        "proceso": "P3",
+        "usuario": "lfernandez",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "10",
+        "nrotramite": "TR0010",
+        "flujo": "F2",
+        "proceso": "P5",
+        "usuario": "agutierrez",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "11",
+        "nrotramite": "TR0011",
+        "flujo": "F2",
+        "proceso": "P7",
+        "usuario": "lfernandez",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "12",
+        "nrotramite": "TR0012",
+        "flujo": "F2",
+        "proceso": "P8",
+        "usuario": "pmendoza",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "13",
+        "nrotramite": "TR0013",
+        "flujo": "F2",
+        "proceso": "P9",
+        "usuario": "angel",
+        "fechaini": "2026-06-14",
+        "fechafin": ""
+    },
+    {
+        "id": "14",
+        "nrotramite": "TR0014",
+        "flujo": "F1",
+        "proceso": "P9",
+        "usuario": "sistema",
+        "fechaini": "2026-06-13",
+        "fechafin": "2026-06-13"
+    },
+    {
+        "id": "15",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P2",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 08:33:31",
+        "fechafin": "2026-06-15 09:29:10"
+    },
+    {
+        "id": "16",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P4",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 09:29:10",
+        "fechafin": "2026-06-15 09:56:11"
+    },
+    {
+        "id": "17",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P5",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 09:56:11",
+        "fechafin": "2026-06-15 10:15:08"
+    },
+    {
+        "id": "18",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P6",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 10:15:08",
+        "fechafin": "2026-06-15 11:03:46"
+    },
+    {
+        "id": "19",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P7",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 11:03:46",
+        "fechafin": "2026-06-15 11:49:43"
+    },
+    {
+        "id": "20",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P8",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 11:49:43",
+        "fechafin": "2026-06-15 11:51:27"
+    },
+    {
+        "id": "21",
+        "nrotramite": "TR0001",
+        "flujo": "F1",
+        "proceso": "P9",
+        "usuario": "angel",
+        "fechaini": "2026-06-15 11:51:27",
+        "fechafin": "2026-06-15 12:27:30"
+    }
+]

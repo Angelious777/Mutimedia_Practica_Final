@@ -1,0 +1,10 @@
+[
+  {
+    "flujo":"F1",
+    "nombre":"Inscripcion de Materias"
+  },
+  {
+    "flujo":"F2",
+    "nombre":"Emision de Certificados"
+  }
+]

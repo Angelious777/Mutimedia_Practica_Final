@@ -1,0 +1,27 @@
+[
+    {
+        "materia": "INF-111 Programación I",
+        "capacidad": 30,
+        "inscritos": 12
+    },
+    {
+        "materia": "INF-112 Estructuras de Datos",
+        "capacidad": 25,
+        "inscritos": 15
+    },
+    {
+        "materia": "INF-113 Base de Datos",
+        "capacidad": 20,
+        "inscritos": 5
+    },
+    {
+        "materia": "MAT-101 Álgebra",
+        "capacidad": 40,
+        "inscritos": 25
+    },
+    {
+        "materia": "FIS-102 Física I",
+        "capacidad": 15,
+        "inscritos": 2
+    }
+]

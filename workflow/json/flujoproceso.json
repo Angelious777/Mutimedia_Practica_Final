@@ -1,167 +1,146 @@
 [
   {
-    "flujo":"F1",
-    "proceso":"P1",
-    "nombre":"Solicitar Inscripcion",
-    "pantalla":"f1_p1.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":null,
-    "siguiente":"P2"
+    "flujo": "F1",
+    "proceso": "P1",
+    "nombre": "Solicitar Inscripcion",
+    "pantalla": "f1_p1.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "P2"
   },
   {
-    "flujo":"F1",
-    "proceso":"P2",
-    "nombre":"Verificar Habilitacion Academica",
-    "pantalla":"f1_p2.inc.php",
-    "rol":"SISTEMA",
-    "anterior":"P1",
-    "siguiente":"CONDICION"
+    "flujo": "F1",
+    "proceso": "P2",
+    "nombre": "Verificar Habilitacion Academica",
+    "pantalla": "f1_p2.inc.php",
+    "rol": "SISTEMA",
+    "siguiente": "CONDICION"
   },
   {
-    "flujo":"F1",
-    "proceso":"P3",
-    "nombre":"Notificar Observaciones",
-    "pantalla":"f1_p3.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":"P2",
-    "siguiente":"FIN"
+    "flujo": "F1",
+    "proceso": "P3",
+    "nombre": "Notificar Observaciones",
+    "pantalla": "f1_p3.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "FIN"
   },
   {
-    "flujo":"F1",
-    "proceso":"P4",
-    "nombre":"Verificar Pago Matricula",
-    "pantalla":"f1_p4.inc.php",
-    "rol":"CAJA",
-    "anterior":"P2",
-    "siguiente":"CONDICION"
+    "flujo": "F1",
+    "proceso": "P4",
+    "nombre": "Verificar Pago Matricula",
+    "pantalla": "f1_p4.inc.php",
+    "rol": "CAJA",
+    "siguiente": "CONDICION"
   },
   {
-    "flujo":"F1",
-    "proceso":"P5",
-    "nombre":"Autorizar Inscripcion",
-    "pantalla":"f1_p5.inc.php",
-    "rol":"ADMIN_ACADEMICO",
-    "anterior":"P4",
-    "siguiente":"P6"
+    "flujo": "F1",
+    "proceso": "P5",
+    "nombre": "Autorizar Inscripcion",
+    "pantalla": "f1_p5.inc.php",
+    "rol": "ADMIN_ACADEMICO",
+    "siguiente": "P6"
   },
   {
-    "flujo":"F1",
-    "proceso":"P6",
-    "nombre":"Seleccionar Materias",
-    "pantalla":"f1_p6.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":"P5",
-    "siguiente":"P7"
+    "flujo": "F1",
+    "proceso": "P6",
+    "nombre": "Seleccionar Materias",
+    "pantalla": "f1_p6.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "P7"
   },
   {
-    "flujo":"F1",
-    "proceso":"P7",
-    "nombre":"Verificar Cupos",
-    "pantalla":"f1_p7.inc.php",
-    "rol":"ADMIN_ACADEMICO",
-    "anterior":"P6",
-    "siguiente":"CONDICION"
+    "flujo": "F1",
+    "proceso": "P7",
+    "nombre": "Verificar Cupos",
+    "pantalla": "f1_p7.inc.php",
+    "rol": "ADMIN_ACADEMICO",
+    "siguiente": "CONDICION"
   },
   {
-    "flujo":"F1",
-    "proceso":"P8",
-    "nombre":"Confirmar Materias Inscritas",
-    "pantalla":"f1_p8.inc.php",
-    "rol":"SISTEMA",
-    "anterior":"P7",
-    "siguiente":"P9"
+    "flujo": "F1",
+    "proceso": "P8",
+    "nombre": "Confirmar Materias Inscritas",
+    "pantalla": "f1_p8.inc.php",
+    "rol": "SISTEMA",
+    "siguiente": "P9"
   },
   {
-    "flujo":"F1",
-    "proceso":"P9",
-    "nombre":"Generar Comprobante",
-    "pantalla":"f1_p9.inc.php",
-    "rol":"SISTEMA",
-    "anterior":"P8",
-    "siguiente":"FIN"
-  },
-
-
-
-  {
-    "flujo":"F2",
-    "proceso":"P1",
-    "nombre":"Solicitar Certificado",
-    "pantalla":"f2_p1.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":null,
-    "siguiente":"P2"
+    "flujo": "F1",
+    "proceso": "P9",
+    "nombre": "Generar Comprobante",
+    "pantalla": "f1_p9.inc.php",
+    "rol": "SISTEMA",
+    "siguiente": "FIN"
   },
   {
-    "flujo":"F2",
-    "proceso":"P2",
-    "nombre":"Cargar Documentos",
-    "pantalla":"f2_p2.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":"P1",
-    "siguiente":"P3"
+    "flujo": "F2",
+    "proceso": "P1",
+    "nombre": "Solicitar Certificado",
+    "pantalla": "f2_p1.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "P2"
   },
   {
-    "flujo":"F2",
-    "proceso":"P3",
-    "nombre":"Validar Documentos",
-    "pantalla":"f2_p3.inc.php",
-    "rol":"KARDEX",
-    "anterior":"P2",
-    "siguiente":"CONDICION"
+    "flujo": "F2",
+    "proceso": "P2",
+    "nombre": "Cargar Documentos",
+    "pantalla": "f2_p2.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "P3"
   },
   {
-    "flujo":"F2",
-    "proceso":"P4",
-    "nombre":"Notificar Observaciones",
-    "pantalla":"f2_p4.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":"P3",
-    "siguiente":"FIN"
+    "flujo": "F2",
+    "proceso": "P3",
+    "nombre": "Validar Documentos",
+    "pantalla": "f2_p3.inc.php",
+    "rol": "KARDEX",
+    "siguiente": "CONDICION"
   },
   {
-    "flujo":"F2",
-    "proceso":"P5",
-    "nombre":"Verificar Pago",
-    "pantalla":"f2_p5.inc.php",
-    "rol":"CAJA",
-    "anterior":"P3",
-    "siguiente":"CONDICION"
+    "flujo": "F2",
+    "proceso": "P4",
+    "nombre": "Notificar Observaciones",
+    "pantalla": "f2_p4.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "FIN"
   },
   {
-    "flujo":"F2",
-    "proceso":"P6",
-    "nombre":"Notificar Falta de Pago",
-    "pantalla":"f2_p6.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":"P5",
-    "siguiente":"FIN"
+    "flujo": "F2",
+    "proceso": "P5",
+    "nombre": "Verificar Pago",
+    "pantalla": "f2_p5.inc.php",
+    "rol": "CAJA",
+    "siguiente": "CONDICION"
   },
   {
-    "flujo":"F2",
-    "proceso":"P7",
-    "nombre":"Generar Certificado",
-    "pantalla":"f2_p7.inc.php",
-    "rol":"KARDEX",
-    "anterior":"P5",
-    "siguiente":"P8"
+    "flujo": "F2",
+    "proceso": "P6",
+    "nombre": "Notificar Falta de Pago",
+    "pantalla": "f2_p6.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "FIN"
   },
   {
-    "flujo":"F2",
-    "proceso":"P8",
-    "nombre":"Firma Digital",
-    "pantalla":"f2_p8.inc.php",
-    "rol":"SECRETARIA",
-    "anterior":"P7",
-    "siguiente":"P9"
+    "flujo": "F2",
+    "proceso": "P7",
+    "nombre": "Generar Certificado",
+    "pantalla": "f2_p7.inc.php",
+    "rol": "KARDEX",
+    "siguiente": "P8"
   },
   {
-    "flujo":"F2",
-    "proceso":"P9",
-    "nombre":"Entrega Digital",
-    "pantalla":"f2_p9.inc.php",
-    "rol":"ESTUDIANTE",
-    "anterior":"P8",
-    "siguiente":"FIN"
+    "flujo": "F2",
+    "proceso": "P8",
+    "nombre": "Firma Digital",
+    "pantalla": "f2_p8.inc.php",
+    "rol": "SECRETARIA",
+    "siguiente": "P9"
+  },
+  {
+    "flujo": "F2",
+    "proceso": "P9",
+    "nombre": "Entrega Digital",
+    "pantalla": "f2_p9.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "FIN"
   }
 ]

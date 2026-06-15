@@ -1,37 +1,163 @@
-/* Centrar todo el contenido en la pantalla */
+/* =========================================================================
+   ESTILOS GENERALES Y TIPOGRAFÍA (Abarca todo el sitio)
+   ========================================================================= */
 body {
+    background-color: #f4f6f9;
+    margin: 0;
+    /* Aplicamos la tipografía Space Grotesk de forma global */
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    color: #212529;
+}
+
+/* Forzar que todos los elementos de formulario y títulos hereden la fuente cuadrada */
+h2, h4, h5, input, button, select, label, .fw-bold {
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.01em;
+}
+
+/* =========================================================================
+   ESTILOS EXCLUSIVOS PARA PÁGINA DE LOGIN
+   ========================================================================= */
+/* Detecta automáticamente si el login está presente para centrar la pantalla */
+body:has(.login-container) {
     background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Contenedor estilo tarjeta para el formulario */
 .login-container {
     background-color: #ffffff;
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px; /* Esquinas rectas estilo geométrico */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     width: 100%;
     max-width: 420px;
 }
 
-/* Estilo para los botones de redes sociales */
 .btn-floating {
     font-size: 1.2rem;
     color: #4f4f4f;
     transition: color 0.2s ease;
 }
-
 .btn-floating:hover {
-    color: #0d6efd; /* Azul de Bootstrap al pasar el cursor */
+    color: #0d6efd;
 }
 
-/* Mejoras visuales en las etiquetas */
 .form-label {
     font-weight: 500;
     color: #495057;
+    letter-spacing: 0.02em;
+}
+
+/* =========================================================================
+   ESTILOS EXCLUSIVOS PARA LA BANDEJA DE ENTRADA (WORKFLOW)
+   ========================================================================= */
+body:has(.main-container) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.main-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 4px; /* Estructura cuadrada */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+    border: 1px solid #e3e6ec;
+}
+
+.welcome-box {
+    color: #ffffff;
+    padding: 1.75rem;
+    border-radius: 4px; /* Cuadrado */
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.welcome-box h2 {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.role-indicator {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em; /* tracking espaciado */
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Botón Cerrar Sesión - Rojo Mate */
+.btn-logout {
+    background: linear-gradient(135deg, #a61c1c, #7e1212);
+    color: #ffffff !important;
+    border: 1px solid #6b0f0f;
+    border-radius: 2px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+.btn-logout:hover {
+    background: linear-gradient(135deg, #be2525, #911616);
+    box-shadow: 0 2px 8px rgba(166, 28, 28, 0.2);
+}
+
+.table th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: #495057;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dbdfec;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8fafd;
+    transition: background-color 0.2s ease;
+}
+
+.card {
+    border-radius: 2px !important; /* Panel de solicitudes cuadrado */
+}
+
+/* =========================================================================
+   PALETAS DE COLORES OSCUROS MATES PARA EL WELCOME-BOX
+   ========================================================================= */
+
+/* 1. ESTUDIANTE (Verde Pino Mate) */
+body.role-ESTUDIANTE .welcome-box {
+    background: linear-gradient(135deg, #2b4c37, #1e3526);
+}
+
+/* 2. CAJA (Marrón Arcilla / Ocre Opaco) */
+body.role-CAJA .welcome-box {
+    background: linear-gradient(135deg, #5c462b, #42321e);
+}
+
+/* 3. KÁRDEX (Azul Pizarra / Cadete) */
+body.role-KARDEX .welcome-box {
+    background: linear-gradient(135deg, #2c4257, #1d2d3c);
+}
+
+/* 4. ADMINISTRADOR ACADÉMICO (Granate Terroso) */
+body.role-ADMIN_ACADEMICO .welcome-box {
+    background: linear-gradient(135deg, #5a2d2d, #401f1f);
+}
+
+/* 5. SECRETARÍA (Uva Sombrío / Ciruela) */
+body.role-SECRETARIA .welcome-box {
+    background: linear-gradient(135deg, #443254, #2e213a);
+}
+
+/* 6. SISTEMA / POR DEFECTO (Gris Antracita / Grafito) */
+body.role-SISTEMA .welcome-box, body.role-default .welcome-box {
+    background: linear-gradient(135deg, #3a3f44, #272a2e);
 }

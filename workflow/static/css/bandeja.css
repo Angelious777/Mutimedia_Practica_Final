@@ -1,0 +1,98 @@
+/* bandeja.css - Estructura Clara con Panel de Bienvenida Oscuro Mate Equilibrado */
+
+body {
+    background-color: #f4f6f9;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: #212529;
+}
+
+.main-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.welcome-box {
+    color: #ffffff; /* Letras siempre claras y legibles */
+    padding: 1.75rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.welcome-box h2 {
+    color: #ffffff !important;
+}
+
+.role-indicator {
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Botón Cerrar Sesión - Rojo Mate Elegante */
+.btn-logout {
+    background: linear-gradient(135deg, #a61c1c, #7e1212);
+    color: #ffffff !important;
+    border: 1px solid #6b0f0f;
+}
+.btn-logout:hover {
+    background: linear-gradient(135deg, #be2525, #911616);
+    box-shadow: 0 2px 8px rgba(166, 28, 28, 0.2);
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8fafd;
+    transition: background-color 0.2s ease;
+}
+
+/* =========================================================================
+   PALETAS DE COLORES OSCUROS MATES (EQUILIBRADOS Y ATENUADOS)
+   ========================================================================= */
+
+/* 1. ESTUDIANTE (Verde Pino Mate) */
+body.role-ESTUDIANTE .welcome-box {
+    background: linear-gradient(135deg, #2b4c37, #1e3526);
+}
+
+/* 2. CAJA (Marrón Arcilla / Ocre Opaco) */
+body.role-CAJA .welcome-box {
+    background: linear-gradient(135deg, #5c462b, #42321e);
+}
+
+/* 3. KÁRDEX (Azul Pizarra / Cadete) */
+body.role-KARDEX .welcome-box {
+    background: linear-gradient(135deg, #2c4257, #1d2d3c);
+}
+
+/* 4. ADMINISTRADOR ACADÉMICO (Granate Terroso) */
+body.role-ADMIN_ACADEMICO .welcome-box {
+    background: linear-gradient(135deg, #5a2d2d, #401f1f);
+}
+
+/* 5. SECRETARÍA (Uva Sombrío / Ciruela) */
+body.role-SECRETARIA .welcome-box {
+    background: linear-gradient(135deg, #443254, #2e213a);
+}
+
+/* 6. SISTEMA / POR DEFECTO (Gris Antracita / Grafito) */
+body.role-SISTEMA .welcome-box, body.role-default .welcome-box {
+    background: linear-gradient(135deg, #3a3f44, #272a2e);
+}

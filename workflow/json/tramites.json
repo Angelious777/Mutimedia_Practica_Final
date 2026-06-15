@@ -1,18 +1,20 @@
 [
     {
-        "nrotramite": "TR0001",
+        "nrotramite": "1781538627",
         "usuario": "angel",
         "gestion": "2026",
         "semestre": "1",
-        "observaciones": "Primer ADE",
+        "observaciones": "Mi primera inscripcion",
         "habilitado": "SI",
-        "obs_habilitacion": "Habilitado ADE",
+        "obs_habilitacion": "todo bien",
         "pago": "SI",
-        "obs_pago": "Matricula pagada ADE",
-        "materias": [
-            "INF-111 Programación I",
-            "INF-113 Base de Datos"
-        ],
-        "cupo": "SI"
+        "obs_pago": "todo bien"
+    },
+    {
+        "nrotramite": "1781540850",
+        "usuario": "angel",
+        "gestion": "",
+        "semestre": "1",
+        "observaciones": ""
     }
 ]

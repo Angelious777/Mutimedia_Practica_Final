@@ -1,0 +1,41 @@
+/* login.css - Estilos específicos para la pantalla de inicio de sesión */
+
+body {
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-header i {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Suavizar los bordes y enfocar los inputs con el grupo de iconos */
+.input-group .form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+
+.input-group-text {
+    border-right: none;
+}
+
+.form-control.border-start-0 {
+    border-left: none;
+}

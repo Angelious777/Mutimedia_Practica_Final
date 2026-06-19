@@ -1,12 +1,21 @@
 [
     {
-        "nrotramite": "1781846656",
+        "nrotramite": "1781848121",
         "usuario": "angel",
         "gestion": "2026",
         "semestre": "1",
-        "observaciones": "prueba 2123123",
+        "observaciones": "prueba 2",
         "direccion": "AV. VASQUEZ N. 108",
         "telefono": "65666133",
-        "colegio_origen": "ingles catolico"
+        "colegio_origen": "ingles catolico",
+        "habilitado": "SI",
+        "obs_habilitacion": "Todo bien 2",
+        "pago": "SI",
+        "obs_pago": "todo pagado",
+        "materias": [
+            "INF-111 Programación I",
+            "INF-112 Estructuras de Datos"
+        ],
+        "cupo": "SI"
     }
 ]

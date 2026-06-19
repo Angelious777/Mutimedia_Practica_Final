@@ -343,6 +343,7 @@ if($siguiente == "CONDICION"){
             $campo = $c['campo'];
             $valorCampo = null;
 
+            // Buscamos el valor guardado en el trámite actual
             foreach($tramites as $t){
                 if($t['nrotramite'] == $tramite){
                     if(isset($t[$campo])){
@@ -352,7 +353,16 @@ if($siguiente == "CONDICION"){
                 }
             }
 
-            if($valorCampo == $c['value'] || $valorCampo == $c['valor']){ 
+            // CORRECCIÓN: Validamos de forma segura si la regla usa 'value' o 'valor'
+            $valorRegla = null;
+            if (isset($c['value'])) {
+                $valorRegla = $c['value'];
+            } elseif (isset($c['valor'])) {
+                $valorRegla = $c['valor'];
+            }
+
+            // Comparamos de forma limpia sin generar Warnings
+            if($valorCampo !== null && $valorCampo == $valorRegla){ 
                 $siguiente = $c['siguiente'];
                 break;
             }

@@ -17,5 +17,16 @@
             "INF-112 Estructuras de Datos"
         ],
         "cupo": "SI"
+    },
+    {
+        "nrotramite": "1781849523",
+        "usuario": "angel",
+        "tipo_certificado": "Certificado de No Adeudo",
+        "observaciones": "prueba 212312312",
+        "documentos": "VALIDOS",
+        "obs_documentos": "todo bien",
+        "pago": "SI",
+        "obs_pago": "todo pagado",
+        "cuerpo_certificado": "Por la presente se certifica que el estudiante mencionado cuenta con un récord académico idóneo, habiendo aprobado las asignaturas troncales con un rendimiento regular satisfactorio en la gestión vigente..."
     }
 ]

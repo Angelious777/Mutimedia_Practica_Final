@@ -88,5 +88,68 @@
         "usuario": "angel",
         "fechaini": "2026-06-19 06:01:54",
         "fechafin": "2026-06-19 06:02:00"
+    },
+    {
+        "id": "11",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P1",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:12:31",
+        "fechafin": "2026-06-19 06:18:56"
+    },
+    {
+        "id": "12",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P2",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:18:56",
+        "fechafin": "2026-06-19 06:18:58"
+    },
+    {
+        "id": "13",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P3",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:18:58",
+        "fechafin": "2026-06-19 06:19:51"
+    },
+    {
+        "id": "14",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P5",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:19:51",
+        "fechafin": "2026-06-19 06:20:34"
+    },
+    {
+        "id": "15",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P7",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:20:34",
+        "fechafin": "2026-06-19 06:21:00"
+    },
+    {
+        "id": "16",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P8",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:21:00",
+        "fechafin": "2026-06-19 06:21:40"
+    },
+    {
+        "id": "17",
+        "nrotramite": "1781849523",
+        "flujo": "F2",
+        "proceso": "P9",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 06:21:40",
+        "fechafin": "2026-06-19 06:23:09"
     }
 ]

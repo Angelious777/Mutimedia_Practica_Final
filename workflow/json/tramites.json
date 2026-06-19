@@ -1,20 +1,12 @@
 [
     {
-        "nrotramite": "1781538627",
+        "nrotramite": "1781846656",
         "usuario": "angel",
         "gestion": "2026",
         "semestre": "1",
-        "observaciones": "Mi primera inscripcion",
-        "habilitado": "SI",
-        "obs_habilitacion": "todo bien",
-        "pago": "SI",
-        "obs_pago": "todo bien"
-    },
-    {
-        "nrotramite": "1781540850",
-        "usuario": "angel",
-        "gestion": "",
-        "semestre": "1",
-        "observaciones": ""
+        "observaciones": "prueba 2123123",
+        "direccion": "AV. VASQUEZ N. 108",
+        "telefono": "65666133",
+        "colegio_origen": "ingles catolico"
     }
 ]

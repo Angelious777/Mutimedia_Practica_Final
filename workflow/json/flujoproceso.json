@@ -2,8 +2,24 @@
   {
     "flujo": "F1",
     "proceso": "P1",
-    "nombre": "Solicitar Inscripcion",
+    "nombre": "Solicitar Inscripcion - Datos Generales",
     "pantalla": "f1_p1.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "P1A"
+  },
+  {
+    "flujo": "F1",
+    "proceso": "P1A",
+    "nombre": "Registrar Datos Socioeconomicos",
+    "pantalla": "f1_p1a.inc.php",
+    "rol": "ESTUDIANTE",
+    "siguiente": "P1B"
+  },
+  {
+    "flujo": "F1",
+    "proceso": "P1B",
+    "nombre": "Cargar Requisitos de Inscripcion",
+    "pantalla": "f1_p1b.inc.php",
     "rol": "ESTUDIANTE",
     "siguiente": "P2"
   },

@@ -1,29 +1,38 @@
 [
     {
         "id": "1",
-        "nrotramite": "1781540850",
+        "nrotramite": "1781846656",
         "flujo": "F1",
         "proceso": "P1",
         "usuario": "angel",
-        "fechaini": "2026-06-15 18:27:33",
-        "fechafin": "2026-06-15 18:33:10"
+        "fechaini": "2026-06-19 05:27:11",
+        "fechafin": "2026-06-19 05:27:48"
     },
     {
         "id": "2",
-        "nrotramite": "1781540850",
+        "nrotramite": "1781846656",
         "flujo": "F1",
-        "proceso": "P2",
+        "proceso": "P1A",
         "usuario": "angel",
-        "fechaini": "2026-06-15 18:33:10",
-        "fechafin": "2026-06-15 18:43:10"
+        "fechaini": "2026-06-19 05:27:48",
+        "fechafin": "2026-06-19 05:27:50"
     },
     {
         "id": "3",
-        "nrotramite": "1781540850",
+        "nrotramite": "1781846656",
         "flujo": "F1",
-        "proceso": "P1",
+        "proceso": "P1B",
         "usuario": "angel",
-        "fechaini": "2026-06-15 18:43:10",
+        "fechaini": "2026-06-19 05:27:50",
+        "fechafin": "2026-06-19 05:27:54"
+    },
+    {
+        "id": "4",
+        "nrotramite": "1781846656",
+        "flujo": "F1",
+        "proceso": "P2",
+        "usuario": "angel",
+        "fechaini": "2026-06-19 05:27:54",
         "fechafin": ""
     }
 ]

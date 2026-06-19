@@ -102,7 +102,6 @@ if($accion == "anterior"){
 // =========================================================================
 // LÓGICA PARA EL BOTÓN "SIGUIENTE"
 // =========================================================================
-
 foreach($seguimiento as &$s){
     if(
         $s['nrotramite'] == $tramite &&
@@ -117,28 +116,26 @@ foreach($seguimiento as &$s){
 }
 unset($s);
 
-// ==========================================
-// PERSISTENCIA EN TRAMITES.JSON
-// ==========================================
+// =========================================================================
+// PERSISTENCIA EN TRAMITES.JSON (ESTRUCTURA LINEAL CORRELATIVA)
+// =========================================================================
+
+// F1 - P1: Datos Generales
 if($flujo == "F1" && $proceso == "P1"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
-    
     $existe = false;
-    // 1. Buscamos si el trámite ya existe en el archivo
     foreach($tramites as &$t){
         if($t['nrotramite'] == $tramite){
-            // Si ya existe (porque volviste atrás), actualizamos solo los campos de P1
             $t['usuario'] = $usuarioTramite;
             $t['gestion'] = $_POST['gestion'];
             $t['semestre'] = $_POST['semestre'];
-            $t['observaciones'] = $_POST['observaciones']; // Aquí se cambiará a "prueba 2" sin duplicar el objeto
+            $t['observaciones'] = $_POST['observaciones'];
             $existe = true;
             break;
         }
     }
-    unset($t); // Liberamos la referencia
+    unset($t);
 
-    // 2. Si no existe (es la primera vez real que se ejecuta), lo agregamos normalmente
     if(!$existe){
         $tramites[] = [
             "nrotramite" => $tramite,
@@ -148,11 +145,11 @@ if($flujo == "F1" && $proceso == "P1"){
             "observaciones" => $_POST['observaciones']
         ];
     }
-    
     file_put_contents("json/tramites.json", json_encode($tramites, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-if($flujo == "F1" && $proceso == "P1A"){
+// F1 - P2: Registrar Datos Socioeconomicos (Antes P1A)
+if($flujo == "F1" && $proceso == "P2"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
     foreach($tramites as &$t){
         if($t['nrotramite'] == $tramite){
@@ -165,7 +162,8 @@ if($flujo == "F1" && $proceso == "P1A"){
     file_put_contents("json/tramites.json", json_encode($tramites, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-if($flujo == "F1" && $proceso == "P1B"){
+// F1 - P3: Cargar Requisitos de Inscripcion (Antes P1B)
+if($flujo == "F1" && $proceso == "P3"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
     foreach($tramites as &$t){
         if($t['nrotramite'] == $tramite){
@@ -177,7 +175,8 @@ if($flujo == "F1" && $proceso == "P1B"){
     file_put_contents("json/tramites.json", json_encode($tramites, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-if($flujo == "F1" && $proceso == "P2"){
+// F1 - P4: Verificar Habilitacion Academica (Antes P2)
+if($flujo == "F1" && $proceso == "P4"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
     foreach($tramites as &$t){
         if($t['nrotramite'] == $tramite){
@@ -190,7 +189,8 @@ if($flujo == "F1" && $proceso == "P2"){
     file_put_contents("json/tramites.json", json_encode($tramites, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-if($flujo == "F1" && $proceso == "P4"){
+// F1 - P6: Verificar Pago Matricula (Antes P4)
+if($flujo == "F1" && $proceso == "P6"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
     foreach($tramites as &$t){
         if($t['nrotramite'] == $tramite){
@@ -203,7 +203,8 @@ if($flujo == "F1" && $proceso == "P4"){
     file_put_contents("json/tramites.json", json_encode($tramites, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-if($flujo == "F1" && $proceso == "P6"){
+// F1 - P8: Seleccionar Materias (Antes P6)
+if($flujo == "F1" && $proceso == "P8"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
     foreach($tramites as &$t){
         if($t['nrotramite'] == $tramite){
@@ -215,7 +216,8 @@ if($flujo == "F1" && $proceso == "P6"){
     file_put_contents("json/tramites.json", json_encode($tramites, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-if($flujo == "F1" && $proceso == "P7"){
+// F1 - P9: Verificar Cupos (Antes P7)
+if($flujo == "F1" && $proceso == "P9"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
     $cupos = json_decode(file_get_contents("json/cupos.json"), true);
 
@@ -262,7 +264,7 @@ if($flujo == "F1" && $proceso == "P7"){
 }
 
 // ==========================================
-// FLUJO 2 - INTERFACES SECUNDARIAS
+// FLUJO 2 - PERSISTENCIA DE INTERFACES
 // ==========================================
 if($flujo == "F2" && $proceso == "P1"){
     $tramites = json_decode(file_get_contents("json/tramites.json"), true);
@@ -329,9 +331,9 @@ if($flujo == "F2" && $proceso == "P7"){
 }
 
 
-// ==========================================
-// EVALUACIÓN DE RUTAS SIGUIENTES Y CONDICIONES
-// ==========================================
+// =========================================================================
+// EVALUACIÓN SEGURA DE RUTAS SIGUIENTES (CONDICIONALES)
+// =========================================================================
 $siguiente = $procesoActual['siguiente'];
 
 if($siguiente == "CONDICION"){
@@ -343,7 +345,6 @@ if($siguiente == "CONDICION"){
             $campo = $c['campo'];
             $valorCampo = null;
 
-            // Buscamos el valor guardado en el trámite actual
             foreach($tramites as $t){
                 if($t['nrotramite'] == $tramite){
                     if(isset($t[$campo])){
@@ -353,7 +354,6 @@ if($siguiente == "CONDICION"){
                 }
             }
 
-            // CORRECCIÓN: Validamos de forma segura si la regla usa 'value' o 'valor'
             $valorRegla = null;
             if (isset($c['value'])) {
                 $valorRegla = $c['value'];
@@ -361,7 +361,6 @@ if($siguiente == "CONDICION"){
                 $valorRegla = $c['valor'];
             }
 
-            // Comparamos de forma limpia sin generar Warnings
             if($valorCampo !== null && $valorCampo == $valorRegla){ 
                 $siguiente = $c['siguiente'];
                 break;
@@ -402,7 +401,6 @@ file_put_contents("json/seguimiento.json", json_encode($seguimiento, JSON_PRETTY
 // =========================================================================
 if(!empty($siguiente) && $siguiente != "CONDICION" && $siguiente != "FIN"){
     
-    // 1. Buscamos el objeto del proceso siguiente en el mapa para conocer su rol
     $procesoNextObj = null;
     foreach($procesos as $p){
         if($p['flujo'] == $flujo && $p['proceso'] == $siguiente){
@@ -411,7 +409,6 @@ if(!empty($siguiente) && $siguiente != "CONDICION" && $siguiente != "FIN"){
         }
     }
 
-    // 2. Comparamos los roles. Si el rol cambia, rompemos la continuidad enviando a la bandeja
     if ($procesoNextObj && isset($procesoActual['rol']) && isset($procesoNextObj['rol'])) {
         if ($procesoActual['rol'] !== $procesoNextObj['rol']) {
             header("Location: bandejae.php");
@@ -419,7 +416,6 @@ if(!empty($siguiente) && $siguiente != "CONDICION" && $siguiente != "FIN"){
         }
     }
     
-    // Si tienen el mismo rol, el flujo continúa de inmediato
     header("Location: index.php?flujo=$flujo&proceso=$siguiente&tramite=$tramite");
 } else {
     header("Location: bandejae.php");

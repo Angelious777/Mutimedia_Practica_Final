@@ -5,85 +5,85 @@
     "nombre": "Solicitar Inscripcion - Datos Generales",
     "pantalla": "f1_p1.inc.php",
     "rol": "ESTUDIANTE",
-    "siguiente": "P1A"
-  },
-  {
-    "flujo": "F1",
-    "proceso": "P1A",
-    "nombre": "Registrar Datos Socioeconomicos",
-    "pantalla": "f1_p1a.inc.php",
-    "rol": "ESTUDIANTE",
-    "siguiente": "P1B"
-  },
-  {
-    "flujo": "F1",
-    "proceso": "P1B",
-    "nombre": "Cargar Requisitos de Inscripcion",
-    "pantalla": "f1_p1b.inc.php",
-    "rol": "ESTUDIANTE",
     "siguiente": "P2"
   },
   {
     "flujo": "F1",
     "proceso": "P2",
-    "nombre": "Verificar Habilitacion Academica",
+    "nombre": "Registrar Datos Socioeconomicos",
     "pantalla": "f1_p2.inc.php",
-    "rol": "SISTEMA",
-    "siguiente": "CONDICION"
+    "rol": "ESTUDIANTE",
+    "siguiente": "P3"
   },
   {
     "flujo": "F1",
     "proceso": "P3",
-    "nombre": "Notificar Observaciones",
+    "nombre": "Cargar Requisitos de Inscripcion",
     "pantalla": "f1_p3.inc.php",
     "rol": "ESTUDIANTE",
-    "siguiente": "FIN"
+    "siguiente": "P4"
   },
   {
     "flujo": "F1",
     "proceso": "P4",
-    "nombre": "Verificar Pago Matricula",
+    "nombre": "Verificar Habilitacion Academica",
     "pantalla": "f1_p4.inc.php",
-    "rol": "CAJA",
+    "rol": "SISTEMA",
     "siguiente": "CONDICION"
   },
   {
     "flujo": "F1",
     "proceso": "P5",
-    "nombre": "Autorizar Inscripcion",
+    "nombre": "Notificar Observaciones",
     "pantalla": "f1_p5.inc.php",
-    "rol": "ADMIN_ACADEMICO",
-    "siguiente": "P6"
+    "rol": "ESTUDIANTE",
+    "siguiente": "FIN"
   },
   {
     "flujo": "F1",
     "proceso": "P6",
-    "nombre": "Seleccionar Materias",
+    "nombre": "Verificar Pago Matricula",
     "pantalla": "f1_p6.inc.php",
-    "rol": "ESTUDIANTE",
-    "siguiente": "P7"
-  },
-  {
-    "flujo": "F1",
-    "proceso": "P7",
-    "nombre": "Verificar Cupos",
-    "pantalla": "f1_p7.inc.php",
-    "rol": "ADMIN_ACADEMICO",
+    "rol": "CAJA",
     "siguiente": "CONDICION"
   },
   {
     "flujo": "F1",
+    "proceso": "P7",
+    "nombre": "Autorizar Inscripcion",
+    "pantalla": "f1_p7.inc.php",
+    "rol": "ADMIN_ACADEMICO",
+    "siguiente": "P8"
+  },
+  {
+    "flujo": "F1",
     "proceso": "P8",
-    "nombre": "Confirmar Materias Inscritas",
+    "nombre": "Seleccionar Materias",
     "pantalla": "f1_p8.inc.php",
-    "rol": "SISTEMA",
+    "rol": "ESTUDIANTE",
     "siguiente": "P9"
   },
   {
     "flujo": "F1",
     "proceso": "P9",
-    "nombre": "Generar Comprobante",
+    "nombre": "Verificar Cupos",
     "pantalla": "f1_p9.inc.php",
+    "rol": "ADMIN_ACADEMICO",
+    "siguiente": "CONDICION"
+  },
+  {
+    "flujo": "F1",
+    "proceso": "P10",
+    "nombre": "Confirmar Materias Inscritas",
+    "pantalla": "f1_p10.inc.php",
+    "rol": "SISTEMA",
+    "siguiente": "P11"
+  },
+  {
+    "flujo": "F1",
+    "proceso": "P11",
+    "nombre": "Generar Comprobante",
+    "pantalla": "f1_p11.inc.php",
     "rol": "SISTEMA",
     "siguiente": "FIN"
   },

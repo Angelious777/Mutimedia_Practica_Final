@@ -16,28 +16,21 @@ foreach($tramites as $t){
     }
 }
 
-$materias = [
-    "INF-111 Programación I",
-    "INF-112 Estructuras de Datos",
-    "INF-113 Base de Datos",
-    "MAT-101 Álgebra",
-    "FIS-102 Física I"
-];
-
 ?>
 
-<h4 class="mb-4">Selección de Materias</h4>
+<h4 class="mb-4">Confirmación de Inscripción</h4>
 
 <?php if($datos){ ?>
 
-<div class="alert alert-info">
-    Seleccione las materias que desea inscribir.
+<div class="alert alert-success">
+    ✔ Las materias fueron validadas correctamente por el sistema.
+    La inscripción está lista para ser confirmada.
 </div>
 
 <div class="card mb-4">
 
     <div class="card-header bg-secondary text-white">
-        Información del Trámite
+        Datos del Estudiante
     </div>
 
     <div class="card-body">
@@ -46,17 +39,17 @@ $materias = [
 
             <div class="col-md-4">
                 <strong>Nro. Trámite:</strong><br>
-                <?php echo $datos['nrotramite']; ?>
+                <?= htmlspecialchars($datos['nrotramite']) ?>
             </div>
 
             <div class="col-md-4">
                 <strong>Usuario:</strong><br>
-                <?php echo $datos['usuario']; ?>
+                <?= htmlspecialchars($datos['usuario']) ?>
             </div>
 
             <div class="col-md-4">
                 <strong>Estado:</strong><br>
-                AUTORIZADO
+                INSCRIPCIÓN VALIDADA
             </div>
 
         </div>
@@ -68,32 +61,37 @@ $materias = [
 <div class="card">
 
     <div class="card-header bg-primary text-white">
-        Materias Disponibles
+        Materias Confirmadas
     </div>
 
     <div class="card-body">
 
-        <?php foreach($materias as $m){ ?>
+        <?php if(!empty($datos['materias'])){ ?>
 
-            <div class="form-check mb-2">
+            <ul class="list-group">
 
-                <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="materias[]"
-                    value="<?php echo $m; ?>"
-                    <?php echo in_array($m, $datos['materias'] ?? []) ? 'checked' : ''; ?>>
+                <?php foreach($datos['materias'] as $m){ ?>
+                    <li class="list-group-item">
+                        <?= htmlspecialchars($m) ?>
+                    </li>
+                <?php } ?>
 
-                <label class="form-check-label">
-                    <?php echo $m; ?>
-                </label>
+            </ul>
 
+        <?php } else { ?>
+
+            <div class="text-muted">
+                No hay materias registradas.
             </div>
 
         <?php } ?>
 
     </div>
 
+</div>
+
+<div class="alert alert-info mt-4">
+    El sistema generará el comprobante final de inscripción en el siguiente proceso.
 </div>
 
 <?php } else { ?>

@@ -28,5 +28,15 @@
         "pago": "SI",
         "obs_pago": "todo pagado",
         "cuerpo_certificado": "Por la presente se certifica que el estudiante mencionado cuenta con un récord académico idóneo, habiendo aprobado las asignaturas troncales con un rendimiento regular satisfactorio en la gestión vigente..."
+    },
+    {
+        "nrotramite": "1781850189",
+        "usuario": "angel",
+        "gestion": "2025",
+        "semestre": "1",
+        "observaciones": "Prueba ADE",
+        "direccion": "AV. VASQUEZ N. 108",
+        "telefono": "65666133",
+        "colegio_origen": "ingles catolico"
     }
 ]

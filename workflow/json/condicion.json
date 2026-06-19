@@ -1,75 +1,72 @@
 [
   {
-    "flujo":"F1",
-    "proceso":"P2",
-    "campo":"habilitado",
-    "valor":"SI",
-    "siguiente":"P4"
+    "flujo": "F1",
+    "proceso": "P4",
+    "campo": "habilitado",
+    "valor": "SI",
+    "siguiente": "P6"
   },
   {
-    "flujo":"F1",
-    "proceso":"P2",
-    "campo":"habilitado",
-    "valor":"NO",
-    "siguiente":"P3"
-  },
-
-  {
-    "flujo":"F1",
-    "proceso":"P4",
-    "campo":"pago",
-    "valor":"SI",
-    "siguiente":"P5"
+    "flujo": "F1",
+    "proceso": "P4",
+    "campo": "habilitado",
+    "valor": "NO",
+    "siguiente": "P5"
   },
   {
-    "flujo":"F1",
-    "proceso":"P4",
-    "campo":"pago",
-    "valor":"NO",
-    "siguiente":"P3"
-  },
-
-  {
-    "flujo":"F1",
-    "proceso":"P7",
-    "campo":"cupo",
-    "valor":"SI",
-    "siguiente":"P8"
+    "flujo": "F1",
+    "proceso": "P6",
+    "campo": "pago",
+    "valor": "SI",
+    "siguiente": "P7"
   },
   {
-    "flujo":"F1",
-    "proceso":"P7",
-    "campo":"cupo",
-    "valor":"NO",
-    "siguiente":"P6"
-  },
-
-  {
-    "flujo":"F2",
-    "proceso":"P3",
-    "campo":"documentos",
-    "valor":"VALIDOS",
-    "siguiente":"P5"
+    "flujo": "F1",
+    "proceso": "P6",
+    "campo": "pago",
+    "valor": "NO",
+    "siguiente": "P5"
   },
   {
-    "flujo":"F2",
-    "proceso":"P3",
-    "campo":"documentos",
-    "valor":"OBSERVADOS",
-    "siguiente":"P4"
+    "flujo": "F1",
+    "proceso": "P9",
+    "campo": "cupo",
+    "valor": "SI",
+    "siguiente": "P10"
   },
   {
-    "flujo":"F2",
-    "proceso":"P5",
-    "campo":"pago",
-    "valor":"SI",
-    "siguiente":"P7"
+    "flujo": "F1",
+    "proceso": "P9",
+    "campo": "cupo",
+    "valor": "NO",
+    "siguiente": "P8"
   },
   {
-    "flujo":"F2",
-    "proceso":"P5",
-    "campo":"pago",
-    "valor":"NO",
-    "siguiente":"P6"
+    "flujo": "F2",
+    "proceso": "P3",
+    "campo": "documentos",
+    "valor": "VALIDOS",
+    "siguiente": "P5"
+  },
+  {
+    "flujo": "F2",
+    "proceso": "P3",
+    "campo": "documentos",
+    "valor": "OBSERVADOS",
+    "siguiente": "P4"
+  },
+  {
+    "flujo": "F2",
+    "proceso": "P5",
+    "campo": "pago",
+    "valor": "SI",
+    "siguiente": "P7"
+  },
+  {
+    "flujo": "F2",
+    "proceso": "P5",
+    "campo": "pago",
+    "valor": "NO",
+    "siguiente": "P6"
   }
 ]

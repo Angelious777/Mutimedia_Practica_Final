@@ -1,168 +1,39 @@
 <?php
-
 $tramite = $_GET['tramite'] ?? '';
-
-$tramites = json_decode(
-    file_get_contents("json/tramites.json"),
-    true
-);
-
+$tramites = json_decode(file_get_contents("json/tramites.json"), true);
 $datos = null;
 
-foreach($tramites as $t){
-
-    if($t['nrotramite'] == $tramite){
-
-        $datos = $t;
-        break;
+if (!empty($tramite) && is_array($tramites)) {
+    foreach($tramites as $t){
+        if($t['nrotramite'] == $tramite){
+            $datos = $t;
+            break;
+        }
     }
 }
-
 ?>
 
-<h4 class="mb-4">
-    Verificación de Habilitación Académica
-</h4>
+<h4>Registro de Información Socioeconómica</h4>
+<p class="text-muted mb-4">Por favor completa tus datos residenciales para control interno de becas.</p>
 
-<?php if($datos){ ?>
-
-<div class="card mb-4">
-
-    <div class="card-header bg-primary text-white">
-        Datos de la Solicitud
-    </div>
-
-    <div class="card-body">
-
-        <div class="row mb-3">
-
-            <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Nro. Trámite
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['nrotramite']; ?>"
-                    readonly>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Usuario
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['usuario']; ?>"
-                    readonly>
-            </div>
-
-        </div>
-
-        <div class="row mb-3">
-
-            <div class="col-md-6">
-                <label class="form-label fw-bold">
-                    Gestión
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['gestion']; ?>"
-                    readonly>
-            </div>
-
-            <div class="col-md-6">
-                <label class="form-label fw-bold">
-                    Semestre
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['semestre']; ?>"
-                    readonly>
-            </div>
-
-        </div>
-
-        <div class="mb-3">
-
-            <label class="form-label fw-bold">
-                Observaciones del Estudiante
-            </label>
-
-            <textarea
-                class="form-control"
-                rows="3"
-                readonly><?php echo $datos['observaciones']; ?></textarea>
-
-        </div>
-
-    </div>
-
+<div class="mb-3">
+    <label class="form-label">Dirección de Domicilio Actual</label>
+    <input 
+        type="text" 
+        name="direccion" 
+        class="form-control" 
+        placeholder="Ej: Av. Arce Nro 2412, Edif. Los Pinos"
+        value="<?php echo htmlspecialchars($datos['direccion'] ?? ''); ?>" 
+        required>
 </div>
 
-<div class="card">
-
-    <div class="card-header bg-warning">
-        Resultado de la Verificación
-    </div>
-
-    <div class="card-body">
-
-        <div class="mb-3">
-
-            <label class="form-label">
-                Estado Académico
-            </label>
-
-            <select
-                name="habilitado"
-                class="form-select"
-                required>
-
-                <option value="">
-                    Seleccione una opción
-                </option>
-
-                <option value="SI">
-                    Habilitado
-                </option>
-
-                <option value="NO">
-                    No Habilitado
-                </option>
-
-            </select>
-
-        </div>
-
-        <div class="mb-3">
-
-            <label class="form-label">
-                Observación Administrativa
-            </label>
-
-            <textarea
-                name="obs_habilitacion"
-                class="form-control"
-                rows="3"></textarea>
-
-        </div>
-
-    </div>
-
+<div class="mb-3">
+    <label class="form-label">Teléfono / Celular de Contacto</label>
+    <input 
+        type="text" 
+        name="telefono" 
+        class="form-control" 
+        placeholder="Ej: 71234567"
+        value="<?php echo htmlspecialchars($datos['telefono'] ?? ''); ?>" 
+        required>
 </div>
-
-<?php } else { ?>
-
-<div class="alert alert-danger">
-    No se encontró información del trámite.
-</div>
-
-<?php } ?>

@@ -21,7 +21,7 @@ foreach($tramites as $t){
 ?>
 
 <h4 class="mb-4">
-    Verificación de Pago de Matrícula
+    Verificación de Habilitación Académica
 </h4>
 
 <?php if($datos){ ?>
@@ -29,17 +29,18 @@ foreach($tramites as $t){
 <div class="card mb-4">
 
     <div class="card-header bg-primary text-white">
-        Datos del Estudiante
+        Datos de la Solicitud
     </div>
 
     <div class="card-body">
 
-        <div class="row">
+        <div class="row mb-3">
 
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4">
                 <label class="form-label fw-bold">
                     Nro. Trámite
                 </label>
+
                 <input
                     type="text"
                     class="form-control"
@@ -47,10 +48,11 @@ foreach($tramites as $t){
                     readonly>
             </div>
 
-            <div class="col-md-4 mb-3">
+            <div class="col-md-4">
                 <label class="form-label fw-bold">
                     Usuario
                 </label>
+
                 <input
                     type="text"
                     class="form-control"
@@ -58,10 +60,15 @@ foreach($tramites as $t){
                     readonly>
             </div>
 
-            <div class="col-md-4 mb-3">
+        </div>
+
+        <div class="row mb-3">
+
+            <div class="col-md-6">
                 <label class="form-label fw-bold">
                     Gestión
                 </label>
+
                 <input
                     type="text"
                     class="form-control"
@@ -69,14 +76,11 @@ foreach($tramites as $t){
                     readonly>
             </div>
 
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-4 mb-3">
+            <div class="col-md-6">
                 <label class="form-label fw-bold">
                     Semestre
                 </label>
+
                 <input
                     type="text"
                     class="form-control"
@@ -84,16 +88,18 @@ foreach($tramites as $t){
                     readonly>
             </div>
 
-            <div class="col-md-8 mb-3">
-                <label class="form-label fw-bold">
-                    Observaciones Iniciales
-                </label>
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['observaciones']; ?>"
-                    readonly>
-            </div>
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label fw-bold">
+                Observaciones del Estudiante
+            </label>
+
+            <textarea
+                class="form-control"
+                rows="3"
+                readonly><?php echo $datos['observaciones']; ?></textarea>
 
         </div>
 
@@ -104,32 +110,32 @@ foreach($tramites as $t){
 <div class="card">
 
     <div class="card-header bg-warning">
-        Validación de Pago
+        Resultado de la Verificación
     </div>
 
     <div class="card-body">
 
         <div class="mb-3">
 
-            <label class="form-label fw-bold">
-                Estado del Pago
+            <label class="form-label">
+                Estado Académico
             </label>
 
             <select
-                name="pago"
+                name="habilitado"
                 class="form-select"
                 required>
 
                 <option value="">
-                    Seleccione...
+                    Seleccione una opción
                 </option>
 
                 <option value="SI">
-                    Matrícula Pagada
+                    Habilitado
                 </option>
 
                 <option value="NO">
-                    Matrícula No Pagada
+                    No Habilitado
                 </option>
 
             </select>
@@ -138,16 +144,14 @@ foreach($tramites as $t){
 
         <div class="mb-3">
 
-            <label class="form-label fw-bold">
-                Observaciones de Caja
+            <label class="form-label">
+                Observación Administrativa
             </label>
 
             <textarea
-                name="obs_pago"
+                name="obs_habilitacion"
                 class="form-control"
-                rows="4"
-                placeholder="Detalle de la verificación realizada..."
-                required></textarea>
+                rows="3"></textarea>
 
         </div>
 

@@ -21,19 +21,47 @@ foreach($tramites as $t){
 ?>
 
 <h4 class="mb-4">
-    Autorizar Inscripción
+    Resultado de la Solicitud de Inscripción
 </h4>
 
 <?php if($datos){ ?>
 
-<div class="alert alert-info">
-    Revise la información del estudiante antes de autorizar la inscripción.
+<?php
+
+$listaObservaciones = [];
+
+if(
+    isset($datos['habilitado']) &&
+    $datos['habilitado'] == "NO" &&
+    !empty($datos['obs_habilitacion'])
+){
+    $listaObservaciones[] = $datos['obs_habilitacion'];
+}
+
+if(
+    isset($datos['pago']) &&
+    $datos['pago'] == "NO" &&
+    !empty($datos['obs_pago'])
+){
+    $listaObservaciones[] = $datos['obs_pago'];
+}
+
+?>
+
+<div class="alert alert-danger">
+
+    <h5 class="mb-2">
+        Trámite Observado
+    </h5>
+
+    El trámite no pudo continuar debido a las siguientes observaciones.
+
 </div>
 
 <div class="card">
 
-    <div class="card-header bg-primary text-white">
-        Datos del Trámite
+    <div class="card-header bg-secondary text-white">
+        Información del Trámite
     </div>
 
     <div class="card-body">
@@ -41,116 +69,58 @@ foreach($tramites as $t){
         <div class="row mb-3">
 
             <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Nro. Trámite
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['nrotramite']; ?>"
-                    readonly>
+                <strong>Nro. Trámite</strong><br>
+                <?php echo $datos['nrotramite']; ?>
             </div>
 
             <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Usuario
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['usuario']; ?>"
-                    readonly>
+                <strong>Usuario</strong><br>
+                <?php echo $datos['usuario']; ?>
             </div>
 
             <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Gestión
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['gestion']; ?>"
-                    readonly>
+                <strong>Gestión</strong><br>
+                <?php echo $datos['gestion']; ?>
             </div>
 
         </div>
 
         <div class="row mb-3">
 
-            <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Semestre
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['semestre']; ?>"
-                    readonly>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Estado Académico
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['habilitado'] ?? 'NO REGISTRADO'; ?>"
-                    readonly>
-            </div>
-
-            <div class="col-md-4">
-                <label class="form-label fw-bold">
-                    Pago Matrícula
-                </label>
-
-                <input
-                    type="text"
-                    class="form-control"
-                    value="<?php echo $datos['pago'] ?? 'NO REGISTRADO'; ?>"
-                    readonly>
+            <div class="col-md-6">
+                <strong>Semestre</strong><br>
+                <?php echo $datos['semestre']; ?>
             </div>
 
         </div>
-
-        <?php if(!empty($datos['observaciones'])){ ?>
 
         <div class="mb-3">
 
             <label class="form-label fw-bold">
-                Observaciones del Estudiante
+                Observaciones Registradas
             </label>
 
-            <textarea
-                class="form-control"
-                rows="3"
-                readonly><?php echo $datos['observaciones']; ?></textarea>
+            <?php if(count($listaObservaciones) > 0){ ?>
 
-        </div>
+                <ul class="list-group">
 
-        <?php } ?>
+                    <?php foreach($listaObservaciones as $obs){ ?>
 
-    </div>
+                        <li class="list-group-item">
+                            <?php echo htmlspecialchars($obs); ?>
+                        </li>
 
-</div>
+                    <?php } ?>
 
-<div class="card mt-3">
+                </ul>
 
-    <div class="card-header bg-success text-white">
-        Resolución
-    </div>
+            <?php } else { ?>
 
-    <div class="card-body">
+                <div class="alert alert-secondary mb-0">
+                    No existe ninguna observación registrada.
+                </div>
 
-        <div class="alert alert-success mb-0">
-
-            El estudiante cumple los requisitos académicos y registra el pago correspondiente.
-            Al presionar <strong>Siguiente</strong>, se habilitará la selección de materias.
+            <?php } ?>
 
         </div>
 

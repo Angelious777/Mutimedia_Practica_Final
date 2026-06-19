@@ -10,53 +10,89 @@ $tramites = json_decode(
 $datos = null;
 
 foreach($tramites as $t){
+
     if($t['nrotramite'] == $tramite){
+
         $datos = $t;
         break;
     }
 }
 
-$materias = [
-    "INF-111 Programación I",
-    "INF-112 Estructuras de Datos",
-    "INF-113 Base de Datos",
-    "MAT-101 Álgebra",
-    "FIS-102 Física I"
-];
-
 ?>
 
-<h4 class="mb-4">Selección de Materias</h4>
+<h4 class="mb-4">
+    Verificación de Pago de Matrícula
+</h4>
 
 <?php if($datos){ ?>
 
-<div class="alert alert-info">
-    Seleccione las materias que desea inscribir.
-</div>
-
 <div class="card mb-4">
 
-    <div class="card-header bg-secondary text-white">
-        Información del Trámite
+    <div class="card-header bg-primary text-white">
+        Datos del Estudiante
     </div>
 
     <div class="card-body">
 
         <div class="row">
 
-            <div class="col-md-4">
-                <strong>Nro. Trámite:</strong><br>
-                <?php echo $datos['nrotramite']; ?>
+            <div class="col-md-4 mb-3">
+                <label class="form-label fw-bold">
+                    Nro. Trámite
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="<?php echo $datos['nrotramite']; ?>"
+                    readonly>
             </div>
 
-            <div class="col-md-4">
-                <strong>Usuario:</strong><br>
-                <?php echo $datos['usuario']; ?>
+            <div class="col-md-4 mb-3">
+                <label class="form-label fw-bold">
+                    Usuario
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="<?php echo $datos['usuario']; ?>"
+                    readonly>
             </div>
 
-            <div class="col-md-4">
-                <strong>Estado:</strong><br>
-                AUTORIZADO
+            <div class="col-md-4 mb-3">
+                <label class="form-label fw-bold">
+                    Gestión
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="<?php echo $datos['gestion']; ?>"
+                    readonly>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label fw-bold">
+                    Semestre
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="<?php echo $datos['semestre']; ?>"
+                    readonly>
+            </div>
+
+            <div class="col-md-8 mb-3">
+                <label class="form-label fw-bold">
+                    Observaciones Iniciales
+                </label>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="<?php echo $datos['observaciones']; ?>"
+                    readonly>
             </div>
 
         </div>
@@ -67,30 +103,53 @@ $materias = [
 
 <div class="card">
 
-    <div class="card-header bg-primary text-white">
-        Materias Disponibles
+    <div class="card-header bg-warning">
+        Validación de Pago
     </div>
 
     <div class="card-body">
 
-        <?php foreach($materias as $m){ ?>
+        <div class="mb-3">
 
-            <div class="form-check mb-2">
+            <label class="form-label fw-bold">
+                Estado del Pago
+            </label>
 
-                <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="materias[]"
-                    value="<?php echo $m; ?>"
-                    <?php echo in_array($m, $datos['materias'] ?? []) ? 'checked' : ''; ?>>
+            <select
+                name="pago"
+                class="form-select"
+                required>
 
-                <label class="form-check-label">
-                    <?php echo $m; ?>
-                </label>
+                <option value="">
+                    Seleccione...
+                </option>
 
-            </div>
+                <option value="SI">
+                    Matrícula Pagada
+                </option>
 
-        <?php } ?>
+                <option value="NO">
+                    Matrícula No Pagada
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label fw-bold">
+                Observaciones de Caja
+            </label>
+
+            <textarea
+                name="obs_pago"
+                class="form-control"
+                rows="4"
+                placeholder="Detalle de la verificación realizada..."
+                required></textarea>
+
+        </div>
 
     </div>
 
@@ -99,7 +158,7 @@ $materias = [
 <?php } else { ?>
 
 <div class="alert alert-danger">
-    No se encontró el trámite.
+    No se encontró información del trámite.
 </div>
 
 <?php } ?>

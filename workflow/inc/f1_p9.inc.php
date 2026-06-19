@@ -7,6 +7,11 @@ $tramites = json_decode(
     true
 );
 
+$cupos = json_decode(
+    file_get_contents("json/cupos.json"),
+    true
+);
+
 $datos = null;
 
 foreach($tramites as $t){
@@ -16,58 +21,41 @@ foreach($tramites as $t){
     }
 }
 
+$materias = $datos['materias'] ?? [];
+
 ?>
 
-<h4 class="mb-4">Comprobante de Inscripción</h4>
+<h4 class="mb-4">Verificación de Cupos</h4>
 
 <?php if($datos){ ?>
 
-<div class="alert alert-success">
-    ✔ La inscripción fue completada exitosamente.
+<div class="alert alert-warning">
+    El sistema está verificando la disponibilidad de cupos en las materias seleccionadas.
 </div>
 
 <div class="card mb-4">
 
-    <div class="card-header bg-primary text-white">
-        Comprobante Oficial
+    <div class="card-header bg-secondary text-white">
+        Información del Trámite
     </div>
 
     <div class="card-body">
 
-        <div class="row mb-3">
+        <div class="row">
 
             <div class="col-md-4">
                 <strong>Nro. Trámite:</strong><br>
-                <?= htmlspecialchars($datos['nrotramite']) ?>
+                <?= $datos['nrotramite'] ?>
             </div>
 
             <div class="col-md-4">
-                <strong>Estudiante:</strong><br>
-                <?= htmlspecialchars($datos['usuario']) ?>
+                <strong>Usuario:</strong><br>
+                <?= $datos['usuario'] ?>
             </div>
 
             <div class="col-md-4">
                 <strong>Estado:</strong><br>
-                FINALIZADO
-            </div>
-
-        </div>
-
-        <div class="row mb-3">
-
-            <div class="col-md-4">
-                <strong>Gestión:</strong><br>
-                <?= htmlspecialchars($datos['gestion'] ?? '-') ?>
-            </div>
-
-            <div class="col-md-4">
-                <strong>Semestre:</strong><br>
-                <?= htmlspecialchars($datos['semestre'] ?? '-') ?>
-            </div>
-
-            <div class="col-md-4">
-                <strong>Fecha:</strong><br>
-                <?= date("Y-m-d H:i:s") ?>
+                EN VALIDACIÓN
             </div>
 
         </div>
@@ -78,19 +66,19 @@ foreach($tramites as $t){
 
 <div class="card">
 
-    <div class="card-header bg-secondary text-white">
-        Materias Inscritas
+    <div class="card-header bg-primary text-white">
+        Materias Seleccionadas
     </div>
 
     <div class="card-body">
 
-        <?php if(!empty($datos['materias'])){ ?>
+        <?php if(count($materias) > 0){ ?>
 
             <ul class="list-group">
 
-                <?php foreach($datos['materias'] as $m){ ?>
+                <?php foreach($materias as $m){ ?>
                     <li class="list-group-item">
-                        <?= htmlspecialchars($m) ?>
+                        <?= $m ?>
                     </li>
                 <?php } ?>
 
@@ -99,7 +87,7 @@ foreach($tramites as $t){
         <?php } else { ?>
 
             <div class="text-muted">
-                No se registraron materias.
+                No se seleccionaron materias.
             </div>
 
         <?php } ?>
@@ -108,14 +96,83 @@ foreach($tramites as $t){
 
 </div>
 
-<div class="alert alert-info mt-4">
-    Este documento sirve como constancia de inscripción académica.
+<?php
+
+$cupoDisponible = true;
+$detalle = [];
+
+foreach($materias as $m){
+
+    $encontrado = false;
+
+    foreach($cupos as $c){
+
+        if($c['materia'] == $m){
+
+            $encontrado = true;
+
+            if($c['inscritos'] >= $c['capacidad']){
+                $cupoDisponible = false;
+                $detalle[] = "✖ $m (SIN CUPOS)";
+            } else {
+                $detalle[] = "✔ $m (OK)";
+            }
+
+            break;
+        }
+    }
+
+    if(!$encontrado){
+        $cupoDisponible = false;
+        $detalle[] = "✖ $m (NO EXISTE)";
+    }
+}
+?>
+
+<div class="mt-4">
+
+    <?php if($cupoDisponible){ ?>
+
+        <div class="alert alert-success">
+            ✔ Cupos disponibles. El sistema puede continuar con la inscripción.
+        </div>
+
+    <?php } else { ?>
+
+        <div class="alert alert-danger">
+            ✖ No existen cupos suficientes. El trámite será redirigido.
+        </div>
+
+    <?php } ?>
+
 </div>
+
+<?php if(!empty($detalle)){ ?>
+
+<div class="card mt-3">
+
+    <div class="card-header bg-dark text-white">
+        Detalle de validación
+    </div>
+
+    <div class="card-body">
+
+        <ul>
+            <?php foreach($detalle as $d){ ?>
+                <li><?= $d ?></li>
+            <?php } ?>
+        </ul>
+
+    </div>
+
+</div>
+
+<?php } ?>
 
 <?php } else { ?>
 
 <div class="alert alert-danger">
-    No se encontró el trámite.
+    Trámite no encontrado.
 </div>
 
 <?php } ?>
